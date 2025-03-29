@@ -7,7 +7,7 @@ export default function ProtectedRoute() {
   return (
     user
     ?
-    <Outlet />
+    <Outlet /> 
     :
     <Navigate to="/" />
   );

@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== "production") {
 import logInRouter from '../routes/login.js';
 import logout from '../routes/logOut.js';
 import signUpRouter from '../routes/signUp.js';
+import deleteAcc from '../routes/deleteAccountRoute.js';
 
 const connectDb = async () => {
     if (mongoose.connection.readyState >= 1) {
@@ -35,7 +36,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 const corsOptions = {
-    origin: ['http://localhost:5173','https://maisenmonde.netlify.app','https://accounts.google.com'],   
+    origin: ['http://localhost:5173','https://accounts.google.com'],   
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
     optionsSuccessStatus: 200,
@@ -46,6 +47,7 @@ app.use(cors(corsOptions));
 app.use('/api/login', logInRouter);
 app.use('/api/logout', logout);
 app.use('/api/signin' ,signUpRouter);
+app.use('/api/delete-account', deleteAcc);
 app.get('/api/test', (req,res) => {
     res.send("Hello, The Backend Is Working");
 });

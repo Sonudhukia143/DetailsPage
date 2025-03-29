@@ -6,11 +6,6 @@ import { NavLink } from 'react-router-dom';
 export default function Profile() {
   const state = useSelector(state => state.user?.currentUser?.user);
 
-  const user = {
-    phone: '+123 456 7890',
-    location: 'New York, USA',
-  };
-
   return (
     <>
     {
@@ -18,7 +13,7 @@ export default function Profile() {
         ?
         <Container className="mt-5">
         <Row>
-          <Col md={4} className="text-center">
+          <Col md={12} className="text-center">
             <Card className="shadow-sm">
               <Card.Body>
                 <Image
@@ -30,32 +25,6 @@ export default function Profile() {
                 />
                 <Card.Title>{state?.username}</Card.Title>
                 <Card.Text>{state?.gmail}</Card.Text>
-                <Button variant="primary">Edit Profile</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-  
-          <Col md={8}>
-            <Card className="shadow-sm">
-              <Card.Body>
-                <Card.Title>Contact Information</Card.Title>
-                <Row>
-                  <Col md={6}>
-                    <h6>Email</h6>
-                    <p>{user.email}</p>
-                  </Col>
-                  <Col md={6}>
-                    <h6>Phone</h6>
-                    <p>{user.phone}</p>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={6}>
-                    <h6>Location</h6>
-                    <p>{user.location}</p>
-                  </Col>
-                </Row>
-                <Button variant="outline-primary">Update Info</Button>
               </Card.Body>
             </Card>
           </Col>
