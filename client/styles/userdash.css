@@ -1,0 +1,12 @@
+.row{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+@media (max-width: 1000px) {
+    .row {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+} 

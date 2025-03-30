@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import Sidebar from '../helperComponents/Sidebar.jsx';
 import { Outlet, useNavigate } from 'react-router-dom';
+import '../../styles/userdash.css';
 
 export default function Details() {
     const userState = useSelector(state => state.user);
@@ -13,11 +14,11 @@ export default function Details() {
 
     return (
         <div className="container-fluid">
-            <div style={{display:'grid',gridTemplateColumns:'1fr 5fr'}} className="row">
-                <div style={{margin:'0px',padding:'0px'}}>
+            <div className="row">
+                <div className="sidebar-container">
                     <Sidebar />
                 </div>
-                <div>
+                <div className="outlet-container">
                     <Outlet />
                 </div>
             </div>

@@ -2,7 +2,8 @@ import { Table as BootstrapTable } from "react-bootstrap";
 
 export default function Table({ data }) {
     return (
-        <div className="table-responsive">
+        <div className="table-responsive width-100">
+            <h2 className="text-center">Book List</h2>
             <BootstrapTable striped bordered hover>
                 <thead>
                     <tr>
